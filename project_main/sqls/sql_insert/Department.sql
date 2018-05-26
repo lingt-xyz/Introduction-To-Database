@@ -1,0 +1,10 @@
+INSERT INTO `Department` (`DNumber`,`DName`) VALUES (001,'Finance Department');
+INSERT INTO `Department` (`DNumber`,`DName`) VALUES (002,'IT Department');
+INSERT INTO `Department` (`DNumber`,`DName`) VALUES (003,'Legal Department');
+INSERT INTO `Department` (`DNumber`,`DName`) VALUES (004,'Office Department');
+INSERT INTO `Department` (`DNumber`,`DName`) VALUES (005,'Production Department');
+INSERT INTO `Department` (`DNumber`,`DName`) VALUES (006,'Business Department');
+INSERT INTO `Department` (`DNumber`,`DName`) VALUES (007,'Information Support Department');
+INSERT INTO `Department` (`DNumber`,`DName`) VALUES (008,'Security Department');
+INSERT INTO `Department` (`DNumber`,`DName`) VALUES (009,'Technology Support Department');
+INSERT INTO `Department` (`DNumber`,`DName`) VALUES (0010,'Call Center Department');

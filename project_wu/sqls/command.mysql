@@ -1,0 +1,2 @@
+mysql> use db_name;
+mysql> SET autocommit=0; source ~/git/../create.sql; commit;

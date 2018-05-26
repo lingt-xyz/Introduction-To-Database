@@ -1,0 +1,204 @@
+Queries and Outpus
+
+1.Which students is not a member of any team?
+SELECT Students.SID, Students.Name AS "student without team", Students.gender,Students.email 
+FROM Students 
+WHERE SID NOT IN (SELECT SID FROM Members);
++-----+----------------------+--------+--------------------------+
+| SID | student without team | gender | email                    |
++-----+----------------------+--------+--------------------------+
+|   1 | Bucky Roberts        |      0 | BuckyRoberts@gmail.com   |
+|   2 | Noah Parker          |      0 | NoahParker@gmail.com     |
+|   3 | Kelsey Burger        |      1 | KelseyBurger@gmail.com   |
+|   4 | Corey Smith          |      1 | CoreySmith@gmail.com     |
+|   5 | Harry Potter         |      0 | HarryPotter@gmail.com    |
+|   6 | Henry Jackson        |      0 | HenryJackson@gmail.com   |
+|   7 | Cynthia Alvarez      |      1 | CynthiaAlvarez@gmail.com |
+|   8 | Teresa Smith         |      1 | TeresaSmith@gmail.com    |
+|  60 | Kevin Grier          |      0 | KevinGrier@gmail.com     |
++-----+----------------------+--------+--------------------------+
+9 rows in set (0.01 sec)
+
+
+2. For each team, list its members.
+SELECT Members.TID, Students.SID, Students.Name,Students.gender,Students.email,Members.dateJoined,Members.role 
+FROM Students, Members 
+WHERE Students.SID=Members.SID ORDER BY Members.TID;
++-----+-----+--------------------+--------+-----------------------------+------------+------------+
+| TID | SID | Name               | gender | email                       | dateJoined | role       |
++-----+-----+--------------------+--------+-----------------------------+------------+------------+
+|   3 |   9 | Gary Foster        |      0 | GaryFoster@gmail.com        | 2018-01-23 | TeamLeader |
+|   3 |  10 | Sherry Gibbons     |      1 | SherryGibbons@gmail.com     | 2018-01-22 | TeamMember |
+|   3 |  11 | Jack Nicholson     |      0 | JackNicholson@gmail.com     | 2018-01-27 | TeamMember |
+|   3 |  12 | Penny Green        |      1 | PennyGreen@gmail.com        | 2018-01-29 | TeamMember |
+|   4 |  16 | Preston Harrison   |      0 | PrestonHarrison@gmail.com   | 2018-01-25 | TeamMember |
+|   4 |  15 | Omar Badshah       |      0 | OmarBadshah@gmail.com       | 2018-01-27 | TeamMember |
+|   4 |  14 | Jeremy White       |      0 | JeremyWhite@gmail.com       | 2018-01-24 | TeamMember |
+|   4 |  13 | Alexander Evans    |      0 | AlexanderEvans@gmail.com    | 2018-01-22 | TeamLeader |
+|   5 |  17 | Manuel Rodriguez   |      0 | ManuelRodriguez@gmail.com   | 2018-01-24 | TeamLeader |
+|   5 |  18 | David Jones        |      0 | DavidJones@gmail.com        | 2018-01-24 | TeamMember |
+|   5 |  19 | Nick Flanders      |      0 | NickFlanders@gmail.com      | 2018-01-27 | TeamMember |
+|   5 |  20 | Paul Brown         |      0 | PaulBrown@gmail.com         | 2018-01-26 | TeamMember |
+|   6 |  24 | George Lucas       |      0 | GeorgeLucas@gmail.com       | 2018-01-25 | TeamMember |
+|   6 |  23 | Julian Thomas      |      1 | JulianThomas@gmail.com      | 2018-01-20 | TeamMember |
+|   6 |  22 | Haley Carter       |      1 | HaleyCarter@gmail.com       | 2018-01-20 | TeamMember |
+|   6 |  21 | Sara Rehm          |      1 | SaraRehm@gmail.com          | 2018-01-21 | TeamLeader |
+|   7 |  25 | Perry Jordan       |      0 | PerryJordan@gmail.com       | 2018-01-26 | TeamLeader |
+|   7 |  26 | Christopher Layton |      0 | ChristopherLayton@gmail.com | 2018-01-28 | TeamMember |
+|   7 |  27 | Devon Myers        |      0 | DevonMyers@gmail.com        | 2018-01-29 | TeamMember |
+|   7 |  28 | Debra Talkington   |      1 | DebraTalkington@gmail.com   | 2018-01-22 | TeamMember |
+|   8 |  32 | Desmond Rafferty   |      0 | DesmondRafferty@gmail.com   | 2018-01-22 | TeamMember |
+|   8 |  31 | Kay Billings       |      1 | KayBillings@gmail.com       | 2018-01-28 | TeamMember |
+|   8 |  30 | Harry Brown        |      0 | HarryBrown@gmail.com        | 2018-01-25 | TeamMember |
+|   8 |  29 | Peter Johnson      |      0 | PeterJohnson@gmail.com      | 2018-01-21 | TeamLeader |
+|   9 |  36 | Candice Thompson   |      1 | CandiceThompson@gmail.com   | 2018-01-20 | TeamMember |
+|   9 |  35 | Michael Davis      |      0 | MichaelDavis@gmail.com      | 2018-01-29 | TeamMember |
+|   9 |  34 | Jackson Taylor     |      0 | JacksonTaylor@gmail.com     | 2018-01-26 | TeamMember |
+|   9 |  33 | Lisa Washington    |      1 | LisaWashington@gmail.com    | 2018-01-27 | TeamLeader |
+|  10 |  37 | Terry Mitchell     |      0 | TerryMitchell@gmail.com     | 2018-01-27 | TeamLeader |
+|  10 |  38 | Ruth Bolen         |      1 | RuthBolen@gmail.com         | 2018-01-22 | TeamMember |
+|  10 |  39 | James Hamilton     |      0 | JamesHamilton@gmail.com     | 2018-01-25 | TeamMember |
+|  10 |  40 | Harvey Akins       |      0 | HarveyAkins@gmail.com       | 2018-01-26 | TeamMember |
+|  11 |  43 | Ken Davidson       |      0 | KenDavidson@gmail.com       | 2018-01-28 | TeamMember |
+|  11 |  42 | Stephanie Nichols  |      1 | StephanieNichols@gmail.com  | 2018-01-23 | TeamMember |
+|  11 |  41 | Timothy Smothers   |      0 | TimothySmothers@gmail.com   | 2018-01-24 | TeamLeader |
+|  12 |  44 | Angel Martin       |      1 | AngelMartin@gmail.com       | 2018-01-24 | TeamLeader |
+|  12 |  45 | Cathy Douglas      |      1 | CathyDouglas@gmail.com      | 2018-01-22 | TeamMember |
+|  12 |  46 | Kendall Norton     |      1 | KendallNorton@gmail.com     | 2018-01-20 | TeamMember |
+|  13 |  49 | Evan Bayh          |      1 | EvanBayh@gmail.com          | 2018-01-25 | TeamMember |
+|  13 |  48 | Patty Zrock        |      1 | PattyZrock@gmail.com        | 2018-01-26 | TeamMember |
+|  13 |  47 | Desire Morton      |      0 | DesireMorton@gmail.com      | 2018-01-25 | TeamLeader |
+|  14 |  50 | Kevin Masters      |      0 | KevinMasters@gmail.com      | 2018-01-25 | TeamLeader |
+|  14 |  51 | Paula Barker       |      1 | PaulaBarker@gmail.com       | 2018-01-22 | TeamMember |
+|  14 |  52 | John Jacobs        |      0 | JohnJacobs@gmail.com        | 2018-01-22 | TeamMember |
+|  15 |  55 | Michael Orlando    |      0 | MichaelOrlando@gmail.com    | 2018-01-29 | TeamMember |
+|  15 |  54 | David Turner       |      0 | DavidTurner@gmail.com       | 2018-01-28 | TeamMember |
+|  15 |  53 | Dana Brunswick     |      1 | DanaBrunswick@gmail.com     | 2018-01-26 | TeamLeader |
+|  16 |  56 | Terry Green        |      0 | TerryGreen@gmail.com        | 2018-01-24 | TeamMember |
+|  16 |  57 | Greg Evans         |      0 | GregEvans@gmail.com         | 2018-01-20 | TeamMember |
+|  17 |  58 | Sandy Johnson      |      1 | SandyJohnson@gmail.com      | 2018-01-22 | TeamMember |
+|  17 |  59 | Charlie Jones      |      0 | CharlieJones@gmail.com      | 2018-01-21 | TeamMember |
++-----+-----+--------------------+--------+-----------------------------+------------+------------+
+51 rows in set (0.00 sec)
+
+
+3. Who was not present in the demo of a team?
+SELECT Students.SID, Students.Name AS "student absent from a demo", Students.gender,Students.email 
+FROM Students 
+WHERE SID NOT IN (SELECT SID FROM Demos);
++-----+----------------------------+--------+----------------------+
+| SID | student absent from a demo | gender | email                |
++-----+----------------------------+--------+----------------------+
+|  60 | Kevin Grier                |      0 | KevinGrier@gmail.com |
++-----+----------------------------+--------+----------------------+
+1 row in set (0.00 sec)
+
+
+4. LIst the teams which have less than 4 members.
+SELECT TID AS "Team with less than 4 members", NoOfMembers 
+FROM Teams 
+WHERE NoOfMembers<4;
++-------------------------------+-------------+
+| Team with less than 4 members | NoOfMembers |
++-------------------------------+-------------+
+|                             1 |           0 |
+|                             2 |           0 |
+|                            11 |           3 |
+|                            12 |           3 |
+|                            13 |           3 |
+|                            14 |           3 |
+|                            15 |           3 |
+|                            16 |           2 |
+|                            17 |           2 |
++-------------------------------+-------------+
+9 rows in set (0.01 sec)
+
+
+5.Given a date, list all the teams that have demos on that day.
+SELECT DISTINCT TID, time 
+FROM Demos 
+WHERE Date='2018-02-25';
++-----+----------+
+| TID | time     |
++-----+----------+Results
+|   1 | 08:00:00 |
+|   2 | 18:00:00 |
++-----+----------+
+2 rows in set (0.01 sec)
+
+
+6.For each team that is not complete (<4 members), list the TID and the capacity to increase. 
+(That is, if a team has 1 member, the capacity to increase would be 3).
+SELECT TID, 4-NoOfMembers AS 'Increase Capacity', NoOfMembers 
+FROM Teams 
+WHERE NoOfMembers<4;
++-----+-------------------+-------------+
+| TID | Increase Capacity | NoOfMembers |
++-----+-------------------+-------------+
+|   1 |                 4 |           0 |
+|   2 |                 4 |           0 |
+|  11 |                 1 |           3 |
+|  12 |                 1 |           3 |
+|  13 |                 1 |           3 |
+|  14 |                 1 |           3 |
+|  15 |                 1 |           3 |
+|  16 |                 2 |           2 |
+|  17 |                 2 |           2 |
++-----+-------------------+-------------+
+9 rows in set (0.00 sec)
+
+
+7.Given a student Name or ID, find his/her team ID.
+SELECT Students.SID,Students.Name, Members.TID 
+FROM Students, Members 
+WHERE Students.SID=Members.SID AND Students.SID=52;
++-----+-------------+-----+
+| SID | Name        | TID |
++-----+-------------+-----+
+|  52 | John Jacobs |  14 |
++-----+-------------+-----+
+1 row in set (0.00 sec)
+
+SELECT Students.SID,Students.Name, Members.TID 
+FROM Students, Members 
+WHERE Students.SID=Members.SID AND Students.Name='Greg Evans';
++-----+------------+-----+
+| SID | Name       | TID |
++-----+------------+-----+
+|  57 | Greg Evans |  16 |
++-----+------------+-----+
+1 row in set (0.00 sec)
+
+
+8.Given a student Name or ID, find the names and SID of his/her teammates.
+SELECT Students.SID,Students.Name 
+FROM Students 
+WHERE SID IN 
+  (SELECT Members.SID FROM Members 
+    WHERE Members.TID IN(select Members.TID FROM Members WHERE Members.SID=52)
+  ) AND Students.SID<>52;
++-----+---------------+
+| SID | Name          |
++-----+---------------+
+|  50 | Kevin Masters |
+|  51 | Paula Barker  |
++-----+---------------+
+2 rows in set (0.00 sec)
+
+SELECT Students.SID,Students.Name 
+FROM Students 
+WHERE SID IN 
+  (SELECT Members.SID FROM Members 
+    WHERE Members.TID IN
+      (select Members.TID FROM Members 
+        WHERE Members.SID IN (SELECT SID FROM Students WHERE Name='Gary Foster')
+      )
+  ) AND Students.Name<>'Gary Foster';
++-----+----------------+
+| SID | Name           |
++-----+----------------+
+|  10 | Sherry Gibbons |
+|  11 | Jack Nicholson |
+|  12 | Penny Green    |
++-----+----------------+
+3 rows in set (0.01 sec)

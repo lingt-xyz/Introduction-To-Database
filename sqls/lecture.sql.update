@@ -1,0 +1,25 @@
+INSERT INTO R VALUES (null, 1);
+INSERT INTO R VALUES (2,1);
+INSERT INTO R VALUES (null, null);
+INSERT INTO R VALUES (3, 2);
+INSERT INTO R VALUES (2, 3);
+INSERT INTO R VALUES (1, null);
+
+INSERT INTO Movie VALUES ('title1', 1970, 50, 'type1', 'studio1', 1);
+INSERT INTO Movie VALUES ('title1', 1990, 230, 'type7', 'studio3', 5);
+INSERT INTO Movie VALUES ('title2', 1910, 150, 'type1', 'studio1', 2);
+INSERT INTO Movie VALUES ('title3', 2010, 10, 'type4', 'studio5', 2);
+INSERT INTO Movie VALUES ('title4', 1953, 40, 'type3', 'studio3', 1);
+INSERT INTO Movie VALUES ('title5', 1987, 20, 'type2', 'studio2', 3);
+INSERT INTO Movie VALUES ('title6', 1971, 20, 'type2', 'studio1', 4);
+
+INSERT INTO Exec VALUES ('name1', 'address1', 1, 30000000);
+INSERT INTO Exec VALUES ('name2', 'address2', 2, 30000000);
+INSERT INTO Exec VALUES ('name3', 'address3', 3, 30000000);
+INSERT INTO Exec VALUES ('name4', 'address4', 4, 30000000);
+INSERT INTO Exec VALUES ('name5', 'address5', 5, 30000000);
+
+
+INSERT INTO Studio(name) SELECT DISTINCT studioName FROM Movie WHERE studioName NOT IN(SELECT name FROM Studio);
+
+UPDATE Exec SET name =  'Pres. ' ||  name WHERE certID IN (SELECT presID FROM Studio);

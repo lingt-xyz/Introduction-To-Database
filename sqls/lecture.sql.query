@@ -1,0 +1,22 @@
+SELECT A, SUM(B) FROM R GROUP BY A;
+
+SELECT A, SUM(B) FROM R WHERE B<>2 GROUP BY A;
+
+SELECT * FROM R WHERE B<>2;
+SELECT * FROM R WHERE B=2;
+SELECT * FROM R WHERE B=null;
+SELECT * FROM R WHERE isNULL(B);
+
+// wrong
+SELECT Exec.name, SUM(Movie.length) FROM Exec, Movie WHERE producerID = certID GROUP BY Exec.name HAVING MIN (Movie.year) < 1980;
+// right
+SELECT Exec.name, SUM(Movie.length) FROM Exec, Movie WHERE producerID = certID GROUP BY Exec.name HAVING MIN(Movie.year) < 1980;
+
+
+SELECT A, B FROM R WHERE (A,B) IN ((2,1), (2,3));
+SELECT A, B FROM R WHERE (A,B) IN ((2,1), (NULL, NULL));
+
+SELECT SUM(length), studioName FROM Movie GROUP BY studioName;
+SELECT SUM(length), studioName FROM Movie;
+SELECT studioName FROM Movie GROUP BY studioName;
+SELECT * FROM Movie GROUP BY studioName;

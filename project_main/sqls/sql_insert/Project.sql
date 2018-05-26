@@ -1,0 +1,10 @@
+INSERT INTO `Project` (`PID`,`PName`,`location`,`stage`) VALUES (1001,'Project  1','Location A', 'preliminary');
+INSERT INTO `Project` (`PID`,`PName`,`location`,`stage`) VALUES (1002,'Project  2','Location B', 'preliminary');
+INSERT INTO `Project` (`PID`,`PName`,`location`,`stage`) VALUES (1003,'Project  3','Location C', 'preliminary');
+INSERT INTO `Project` (`PID`,`PName`,`location`,`stage`) VALUES (1004,'Project  4','Location D', 'intermediate');
+INSERT INTO `Project` (`PID`,`PName`,`location`,`stage`) VALUES (1005,'Project  5','Location E', 'intermediate');
+INSERT INTO `Project` (`PID`,`PName`,`location`,`stage`) VALUES (1006,'Project  6','Location F', 'intermediate');
+INSERT INTO `Project` (`PID`,`PName`,`location`,`stage`) VALUES (1007,'Project  7','Location G', 'advanced');
+INSERT INTO `Project` (`PID`,`PName`,`location`,`stage`) VALUES (1008,'Project  8','Location H', 'advanced');
+INSERT INTO `Project` (`PID`,`PName`,`location`,`stage`) VALUES (1009,'Project  9','Location I', 'advanced');
+INSERT INTO `Project` (`PID`,`PName`,`location`,`stage`) VALUES (1010,'Project  10','Location J', 'complete');

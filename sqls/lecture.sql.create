@@ -1,0 +1,45 @@
+CREATE TABLE R (
+  A INT,
+  B INT
+);
+
+CREATE TABLE Movie (
+  title VARCHAR(100),
+  year INT,
+  length INT,
+  fileType VARCHAR(10),
+  studioName VARCHAR(100),
+  producerID INT
+);
+
+CREATE TABLE Owns (
+  title VARCHAR(100),
+  year INT,
+  studioName VARCHAR(10)
+);
+
+CREATE TABLE StarsIn (
+  title VARCHAR(100),
+  year INT,
+  starName VARCHAR(10)
+);
+
+CREATE TABLE Exec (
+  name VARCHAR(100),
+  address VARCHAR(100),
+  certID INT,
+  netWorth INT
+);
+
+CREATE TABLE Studio (
+  name VARCHAR(100),
+  address VARCHAR(100),
+  presID INT
+);
+
+CREATE TABLE Star (
+  name CHAR(30), 
+  address VARCHAR(255), 
+  gender CHAR(1),
+  birthdate DATE
+);

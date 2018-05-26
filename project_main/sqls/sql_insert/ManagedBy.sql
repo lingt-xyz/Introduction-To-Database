@@ -1,0 +1,10 @@
+INSERT INTO `ManagedBy` (`DNumber`,`SIN`,`startDate`) VALUES (001,1,'2016-07-08');
+INSERT INTO `ManagedBy` (`DNumber`,`SIN`,`startDate`) VALUES (002,2,'2016-06-09');
+INSERT INTO `ManagedBy` (`DNumber`,`SIN`,`startDate`) VALUES (003,2,'2016-05-04');
+INSERT INTO `ManagedBy` (`DNumber`,`SIN`,`startDate`) VALUES (004,4,'2016-03-02');
+INSERT INTO `ManagedBy` (`DNumber`,`SIN`,`startDate`) VALUES (005,5,'2016-01-08');
+INSERT INTO `ManagedBy` (`DNumber`,`SIN`,`startDate`) VALUES (006,6,'2016-02-08');
+INSERT INTO `ManagedBy` (`DNumber`,`SIN`,`startDate`) VALUES (007,7,'2016-12-08');
+INSERT INTO `ManagedBy` (`DNumber`,`SIN`,`startDate`) VALUES (008,8,'2016-11-18');
+INSERT INTO `ManagedBy` (`DNumber`,`SIN`,`startDate`) VALUES (009,9,'2016-07-08');
+INSERT INTO `ManagedBy` (`DNumber`,`SIN`,`startDate`) VALUES (0010,10,'2016-08-23');
